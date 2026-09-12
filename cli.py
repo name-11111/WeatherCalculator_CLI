@@ -2,6 +2,8 @@ import sys
 
 import press
 import uv_wind
+import th
+import RH
 
 
 # =========================
@@ -25,12 +27,12 @@ COMMANDS = {
         "description": "计算风向、风速 → U/V",
         "function": uv_wind.calculate_uv_windspeed,
         "parameters": [
-            ("dir_deg", "~/uv_wind.dir > ", float),
-            ("speed", "~/uv_wind.speed > ", float),
+            ("dir_deg", "~/uv_wind.dir(deg) > ", float),
+            ("speed", "~/uv_wind.speed(m/s) > ", float),
         ],
         "returns": [
-            "u",
-            "v",
+            "u(m/s)",
+            "v(m/s)",
         ],
     },
 
@@ -38,12 +40,12 @@ COMMANDS = {
         "description": "计算 U/V → 风向、风速",
         "function": uv_wind.calculate_uv_windspeed_from_components,
         "parameters": [
-            ("u", "~/uv_dir.u > ", float),
-            ("v", "~/uv_dir.v > ", float),
+            ("u", "~/uv_dir.u(m/s) > ", float),
+            ("v", "~/uv_dir.v(m/s) > ", float),
         ],
         "returns": [
-            "dir",
-            "speed",
+            "dir(deg)",
+            "speed(m/s)",
         ],
     },
 
@@ -54,9 +56,31 @@ COMMANDS = {
             ("altitude", "~/press.altitude > ", float),
         ],
         "returns": [
-            "pressure",
+            "pressure(hPa)",
         ],
     },
+    "cal-RH": {
+        "description": "计算相对湿度",
+        "function": RH.calculate_RH,
+        "parameters": [
+            ("T", "~/RH.T(°C) > ", float),
+            ("Td", "~/RH.Td(°C) > ", float),
+        ],
+        "returns": [
+            "RH(%)",
+        ],
+    },
+    "cal-th": {
+        "description": "计算位温",
+        "function": th.calculate_th,
+        "parameters": [
+            ("P", "~/th.P(hPa) > ", float),
+            ("T", "~/th.T(K) > ", float),
+        ],
+        "returns": [
+            "th(K)",
+        ],
+    }
 }
 
 

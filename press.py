@@ -1,7 +1,7 @@
 import math
 
 def calculate_pressure_from_altitude(altitude):
-    # Constants
+    # 定义常数
     P0 = 1013.25  # 标准大气压强(hPa)
     T0 = 288.15   # 标准温度(K)
     L = 0.0065    # 温度递减率(K/m)
