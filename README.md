@@ -13,6 +13,8 @@ WeatherCalculator CLI 旨在将一些常用的气象计算封装为简单的命�
 - 风向、风速 → U/V 风分量
 - U/V 风分量 → 风向、风速
 - 根据海拔计算气压
+- 根据气压和温度计算位温
+- 根据温度和露点计算相对湿度
 - 交互式命令行操作
 - Windows 独立可执行文件
 - 模块化的计算函数与命令注册机制
@@ -52,6 +54,8 @@ Windows 用户无需单独安装 Python，直接运行即可。
 | `cal-uv_wind` | 根据风向和风速计算 U/V 风分量 |
 | `cal-dir-speed` | 根据 U/V 风分量计算风向和风速 |
 | `cal-prs` | 根据海拔计算气压 |
+| `cal-RH` | 根据温度和露点计算相对湿度 |
+| `cal-th` | 根据气压和温度计算位温 |
 | `help` | 显示可用命令 |
 | `exit` | 退出程序 |
 
@@ -92,7 +96,6 @@ weathercalculator_cli/
 ├── cli.py           # 交互式 CLI
 ├── press.py         # 气压相关计算
 ├── uv_wind.py       # U/V 风计算
-├── build.ps1        # Windows 构建脚本
 ├── .gitignore
 └── README.md
 ```
@@ -185,8 +188,6 @@ pyinstaller -F --clean --name weathercalculator main.py
 当前版本：
 
 **v0.2.0**
-
-这是 WeatherCalculator CLI 的首个公开版本。
 
 项目目前处于早期开发阶段，因此未来版本可能会调整命令名称、交互方式以及内部接口。
 
