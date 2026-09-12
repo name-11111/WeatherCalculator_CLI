@@ -206,4 +206,4 @@ pyinstaller -F --clean --name weathercalculator main.py
 
 ## License
 
-暂定。
+MIT License
