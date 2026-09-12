@@ -147,20 +147,7 @@ COMMANDS = {
 
 项目使用 PyInstaller 构建 Windows 独立可执行文件。
 
-运行：
-
-```powershell
-.\build.ps1
-```
-
-构建完成后：
-
-```text
-dist/
-└── weathercalculator.exe
-```
-
-也可以直接使用 PyInstaller：
+使用 PyInstaller：
 
 ```powershell
 pyinstaller -F --clean --name weathercalculator main.py
@@ -183,7 +170,6 @@ pyinstaller -F --clean --name weathercalculator main.py
 后续可能加入：
 
 - 更多气象计算公式
-- 温度、露点、湿度相关计算
 - 位势高度与气压层相关计算
 - 风场及热力参数计算
 - 更完善的参数验证
@@ -198,7 +184,7 @@ pyinstaller -F --clean --name weathercalculator main.py
 
 当前版本：
 
-**v0.1.0**
+**v0.2.0**
 
 这是 WeatherCalculator CLI 的首个公开版本。
 
