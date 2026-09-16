@@ -94,6 +94,8 @@ Windows 用户无需单独安装 Python，直接运行即可。
 weathercalculator_cli/
 ├── main.py          # 程序入口
 ├── cli.py           # 交互式 CLI
+├── RH.py            # 相对湿度计算
+├── th.py            # 位温计算
 ├── press.py         # 气压相关计算
 ├── uv_wind.py       # U/V 风计算
 ├── .gitignore
