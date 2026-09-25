@@ -1,9 +1,9 @@
 import sys
 
-import press
-import uv_wind
-import th
-import RH
+import modules.press as press
+import modules.uv_wind as uv_wind
+import modules.th as th
+import modules.RH as RH
 
 
 # =========================

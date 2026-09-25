@@ -1,5 +1,3 @@
-import math
-
 def calculate_pressure_from_altitude(altitude):
     # 定义常数
     P0 = 1013.25  # 标准大气压强(hPa)
