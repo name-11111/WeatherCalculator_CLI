@@ -1,4 +1,5 @@
 import sys
+import art
 
 import modules.press as press
 import modules.uv_wind as uv_wind
@@ -53,7 +54,7 @@ COMMANDS = {
         "description": "从海拔计算气压",
         "function": press.calculate_pressure_from_altitude,
         "parameters": [
-            ("altitude", "~/press.altitude > ", float),
+            ("altitude", "~/press.altitude(m) > ", float),
         ],
         "returns": [
             "pressure(hPa)",
@@ -171,6 +172,7 @@ def execute_command(command):
 
 def run_cli():
 
+    print(art.text2art("WCCLI", font="block", chr_ignore=True))
     print("""欢迎使用天气计算器 CLI。
 输入 help 查看可用命令。""")
 
